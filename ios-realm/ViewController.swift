@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         save(firstName: "Maria", lastName: "Silva", age: 36)
         save(firstName: "José", lastName: "Oliveira", age: 27)
         
+        query()
+        
         update()
         
         render()
@@ -72,6 +74,15 @@ class ViewController: UIViewController {
             angelica.firstName = "Andie"
             angelica.age += 1
         }
+    }
+    
+    private func query() {
+        let people = realm.objects(Person.self)
+        let query = people.where {
+            ($0.age > 22)
+        }
+        
+        print(query)
     }
 }
 
