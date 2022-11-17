@@ -9,22 +9,24 @@ import UIKit
 import RealmSwift
 
 class ViewController: UIViewController {
-
+    
     private let realm = try! Realm()
     
     private let label: UILabel = {
-            let element = UILabel()
-            element.font = UIFont(name: "Helvetica", size: 30)
-            element.textAlignment = .center
-            element.numberOfLines = 0
-            element.text = "People:"
-            return element
-        }()
+        let element = UILabel()
+        element.font = UIFont(name: "Helvetica", size: 30)
+        element.textAlignment = .center
+        element.numberOfLines = 0
+        element.text = "People:"
+        return element
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         label.frame = view.bounds
         view.addSubview(label)
+        
+        delete()
         
         save(firstName: "Angelica", lastName: "Santos", age: 22)
         save(firstName: "Maria", lastName: "Silva", age: 36)
@@ -45,14 +47,20 @@ class ViewController: UIViewController {
     }
     
     private func render() {
-            let people = realm.objects(Person.self)
-            var text = ""
-            
-            for person in people {
-                text += "\n\(person.firstName) \(person.lastName) - \(person.age)"
-            }
-            
-            label.text = text
+        let people = realm.objects(Person.self)
+        var text = ""
+        
+        for person in people {
+            text += "\n\(person.firstName) \(person.lastName) - \(person.age)"
         }
+        
+        label.text = text
+    }
+    
+    private func delete() {
+        realm.beginWrite()
+        realm.delete(realm.objects(Person.self))
+        try! realm.commitWrite()
+    }
 }
 
