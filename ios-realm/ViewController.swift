@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         save(firstName: "Maria", lastName: "Silva", age: 36)
         save(firstName: "José", lastName: "Oliveira", age: 27)
         
+        update()
+        
         render()
     }
     
@@ -61,6 +63,15 @@ class ViewController: UIViewController {
         realm.beginWrite()
         realm.delete(realm.objects(Person.self))
         try! realm.commitWrite()
+    }
+    
+    private func update() {
+        let angelica = realm.objects(Person.self).first!
+        
+        try! realm.write {
+            angelica.firstName = "Andie"
+            angelica.age += 1
+        }
     }
 }
 
