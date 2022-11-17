@@ -36,6 +36,8 @@ class ViewController: UIViewController {
         
         update()
         
+        deleteObject()
+        
         render()
     }
     
@@ -72,7 +74,7 @@ class ViewController: UIViewController {
         
         try! realm.write {
             angelica.firstName = "Andie"
-            angelica.age += 1
+            angelica.age -= 1
         }
     }
     
@@ -116,5 +118,15 @@ class ViewController: UIViewController {
         }
     }
     
+    private func deleteObject() {
+        let people = realm.objects(Person.self)
+        let query = people.where {
+            ($0.age > 27)
+        }
+        
+        realm.beginWrite()
+        realm.delete(query)
+        try! realm.commitWrite()
+    }
 }
 
