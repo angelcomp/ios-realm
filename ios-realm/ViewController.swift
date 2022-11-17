@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
 
+    private let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
     }
-
-
 }
 

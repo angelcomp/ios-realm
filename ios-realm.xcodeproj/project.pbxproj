@@ -14,6 +14,7 @@
 		890176D329268C8E00A4724B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890176D129268C8E00A4724B /* Main.storyboard */; };
 		890176D529268C8F00A4724B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 890176D429268C8F00A4724B /* Assets.xcassets */; };
 		890176D829268C8F00A4724B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890176D629268C8F00A4724B /* LaunchScreen.storyboard */; };
+		89A621C32926906D00C8C075 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A621C22926906D00C8C075 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		890176D429268C8F00A4724B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		890176D729268C8F00A4724B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		890176D929268C8F00A4724B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89A621C22926906D00C8C075 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C913DD5A2E07EAC84A4D8A32 /* Pods-ios-realm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-realm.debug.xcconfig"; path = "Target Support Files/Pods-ios-realm/Pods-ios-realm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +50,6 @@
 				C913DD5A2E07EAC84A4D8A32 /* Pods-ios-realm.debug.xcconfig */,
 				6A3BBE62D3F25AA46DC3FC23 /* Pods-ios-realm.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,6 +89,7 @@
 				890176D429268C8F00A4724B /* Assets.xcassets */,
 				890176D629268C8F00A4724B /* LaunchScreen.storyboard */,
 				890176D929268C8F00A4724B /* Info.plist */,
+				89A621C22926906D00C8C075 /* Person.swift */,
 			);
 			path = "ios-realm";
 			sourceTree = "<group>";
@@ -209,6 +211,7 @@
 			files = (
 				890176D029268C8E00A4724B /* ViewController.swift in Sources */,
 				890176CC29268C8E00A4724B /* AppDelegate.swift in Sources */,
+				89A621C32926906D00C8C075 /* Person.swift in Sources */,
 				890176CE29268C8E00A4724B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
